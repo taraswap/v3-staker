@@ -9,3 +9,5 @@ coverage/
 
 utils/addresses/addresses-localhost.json
 env/.env.localhost
+
+.idea

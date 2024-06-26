@@ -7,7 +7,7 @@ import { HardhatUserConfig } from 'hardhat/config'
 import { SolcUserConfig } from 'hardhat/types'
 import 'solidity-coverage'
 
-const taraxaMnemonic = process.env.TARAXA_MNEMONIC || '';
+const taraxaPk = process.env.TARAXA_PK|| '';
 
 const DEFAULT_COMPILER_SETTINGS: SolcUserConfig = {
   version: '0.7.6',
@@ -46,25 +46,20 @@ const config: HardhatUserConfig = {
       forking: {
         url: 'https://rpc.testnet.taraxa.io',
       },
-      accounts: {
-        mnemonic: taraxaMnemonic,
-      },
+      accounts: [taraxaPk],
       chainId: 842,
     },
     taraxa: {
       url: 'https://rpc.mainnet.taraxa.io',
       chainId: 841,
-      accounts: {
-        mnemonic: taraxaMnemonic,
-      },
+      accounts: [taraxaPk],
       hardfork: 'berlin'
     },
     taraxa_testnet: {
       url: 'https://rpc.testnet.taraxa.io',
       chainId: 842,
-      accounts: ['0x922960d345d67dc47e63cdce0b229884a3b05dfbccc2aed97b9ff2a7ec1cb240'],
+      accounts: [taraxaPk],
       hardfork: 'berlin',
-      loggingEnabled: true
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
