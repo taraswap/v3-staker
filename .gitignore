@@ -6,3 +6,6 @@ typechain/
 *.code-workspace
 dist/
 coverage/
+
+utils/addresses/addresses-localhost.json
+env/.env.localhost
